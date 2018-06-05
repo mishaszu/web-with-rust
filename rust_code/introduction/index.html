@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Webassembly Intro</title>
+        <script>
+            WebAssembly.instantiateStreaming(fetch('target/wasm32-unknown-unknown/release/introduction.wasm'))
+                .then(module => {
+                    const add = module.instance.exports.add;
+                    const h = document.createElement('H1');
+                    const node = document.createTextNode(add(1,1));
+                    h.appendChild(node);
+                    document.getElementById('app').appendChild(h);
+                });
+        </script>
+    </head>
+    <body>
+        <div id="app"></div>
+    </body>
+</html>
