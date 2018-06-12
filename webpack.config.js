@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -12,7 +13,11 @@ module.exports = {
             title: 'Webassembly intro',
             inject: 'body',
             template: './web/index.html',
-        })
+        }),
+        new CopyWebpackPlugin([{
+            from: 'web/images',
+            to: 'images'
+        }])
     ],
     devServer: {
         contentBase: 'build',
@@ -24,6 +29,20 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node-modules/,
                 use: ['babel-loader'],
+            },
+            {
+                test: /\.rs$/,
+                use: [
+                    {
+                        loader: 'wasm-loader'
+                    },
+                    {
+                        loader: 'rust-native-wasm-loader',
+                        options: {
+                            release: true
+                        }
+                    }
+                ]
             },
         ]
     }

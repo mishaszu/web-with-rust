@@ -30,6 +30,10 @@ const App = () => <div className="appWrapper">
             font-family: "lato";
             font-size: 1.5em;
         }
+        ul {
+            font-family: "lato";
+            font-size: 1.5em;
+        }
         #app {
             height: 100%;
         }
