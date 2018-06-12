@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default props => {
-    console.log(props.content);
     function parseContent() {
         let arr = [];
         const p1 = /!1!/;

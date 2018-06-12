@@ -6,11 +6,11 @@ export default class Page extends Component {
     constructor(props) {
         super(props);
     }
-    contentCreator () {
-        if(!this.props.slide.content) {
+    contentCreator (content) {
+        if(!content) {
             return [];
         }
-        return this.props.slide.content.map((e,k) => { 
+        return content.map((e,k) => { 
             if(e.tag === 'h2') {
                 return <h2 key={k}>{e.text}</h2>;
             }
@@ -35,6 +35,15 @@ export default class Page extends Component {
             if(e.tag === 'pCenter') {
                 return <div key={k} className="center"><PTag className="pSize" key={k} content={e.text} /></div>;
             }
+            if(e.tag === 'next') {
+                return <div key={k} className="row">
+                    {e.text.map((f,o)=>
+                        <div key={o} className="center">
+                            {this.contentCreator(f)}
+                        </div>
+                    )}
+                </div>
+            }
         });
     }
     render() {
@@ -43,7 +52,7 @@ export default class Page extends Component {
                 <div className="wrapper">
                     <div className="textArea">
                         <h1>{this.props.slide.title}</h1>
-                        {this.contentCreator()}
+                        {this.contentCreator(this.props.slide.content)}
                     </div>
                 </div>
                 <style>{`
@@ -78,6 +87,15 @@ export default class Page extends Component {
                     }
                     .center {
                         display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        height: 90%;
+                        width: 100%;
+                    }
+                    .row {
+                        display: flex;
+                        flex-direction: row;
                         justify-content: center;
                         align-items: center;
                         height: 90%;

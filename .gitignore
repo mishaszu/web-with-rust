@@ -2,3 +2,5 @@ node_modules
 target
 build
 images
+*.swp
+*.orig
