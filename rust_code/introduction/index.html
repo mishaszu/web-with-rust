@@ -2,18 +2,42 @@
 <html>
     <head>
         <title>Webassembly Intro</title>
-        <script>
-            WebAssembly.instantiateStreaming(fetch('target/wasm32-unknown-unknown/release/introduction.wasm'))
-                .then(module => {
-                    const add = module.instance.exports.add;
-                    const h = document.createElement('H1');
-                    const node = document.createTextNode(add(1,1));
-                    h.appendChild(node);
-                    document.getElementById('app').appendChild(h);
-                });
-        </script>
+        <style>
+            html, body {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+            }
+            h1 {
+                text-align: center;
+            }
+            input {
+                height: 100px;
+                width: 400px;
+                font-size: 3em;
+            }
+            #res {
+                width: 100%;
+                font-size: 3em;
+                text-align: center;
+            }
+        </style>
+        <script src="./main.js"></script
     </head>
     <body>
         <div id="app"></div>
+        <input id="i" type="text" oninput="makeInput()" />
+        <div id="res"</div>
+        <script>
+            function makeInput() {
+                const v = document.getElementById('i').value;
+                document.getElementById('res').innerHTML = window.wasm.sqrt(v);
+            }
+        </script>
     </body>
 </html>

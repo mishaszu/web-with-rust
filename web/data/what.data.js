@@ -6,7 +6,7 @@ export default [
         content: [
             {
                 tag: 'big',
-                text: 'What Why How Bleh',
+                text: 'what why how bleh wow',
             }
         ]
     },
@@ -47,6 +47,10 @@ export default [
             {
                 tag: 'img',
                 src: '../images/programming-ir.png',
+            },
+            {
+                tag: 'p',
+                text: ['!1!here should be url']
             }
         ]
     },
@@ -57,7 +61,12 @@ export default [
             {
                 tag: 'img',
                 src: '../images/programming-wasm.png',
+            },
+            {
+                tag: 'p',
+                text: ['!1!here should be url']
             }
+
         ]
     },
     {
@@ -134,5 +143,21 @@ export default [
                 ]
             }
         ]
-    }
+    },
+    {
+        title: 'What',
+        bg: 'white',
+        content: [
+            {
+                tag: 'li',
+                text: [
+                    'Java (chrome 45, September 2015, npapi depreciation)',
+                    'Flash (chrome 55, December 2016, flash turned off by default)',
+                    'NaCl (Support was completed in May 2016 in favor of Webassembly)',
+                    'Asm.js',
+                    'Webassembly (begins in 2015)'
+                ]
+            }
+        ]
+    },
 ]

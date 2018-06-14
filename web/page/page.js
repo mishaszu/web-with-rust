@@ -93,6 +93,9 @@ export default class Page extends Component {
                         height: 90%;
                         width: 100%;
                     }
+                    .center img {
+                        max-width: 100%;
+                    }
                     .row {
                         display: flex;
                         flex-direction: row;
