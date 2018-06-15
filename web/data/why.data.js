@@ -11,7 +11,18 @@ export default [
                     'More CPU features supported',
                     'Better toolchain (then asm.js)',
                     'Performance is more browser independent (then asm.js)',
-                    'Supported by W3C and Mozilla, Google, Apple & Microsoft developers',
+                    'Supported by W3C and Mozilla, Google, Apple & Microsoft developers'
+                ]
+            }
+        ]
+    },
+    {
+        title: 'Why',
+        bg: 'white',
+        content: [
+            {
+                tag: 'li',
+                text: [
                     `It's a web stadard avaibly in all modern browsers`,
                     'Compiling to wasm is relativly easy',
                     'Compiling to wasm from many languages',
@@ -30,8 +41,9 @@ export default [
                 src: '../images/javascript_compilation.png',
             },
             {
-                tag: 'p',
-                text: ['!1!here should be url']
+                tag: 'a',
+                text: 'What makes WebAssembly fast',
+                src: 'https://hacks.mozilla.org/2017/02/what-makes-webassembly-fast/'
             }
         ]
     },
@@ -44,8 +56,9 @@ export default [
                 src: '../images/webassembly_compilation.png',
             },
             {
-                tag: 'p',
-                text: ['!1!here should be url']
+                tag: 'a',
+                text: 'What makes WebAssembly fast',
+                src: 'https://hacks.mozilla.org/2017/02/what-makes-webassembly-fast/'
             }
         ]
     },

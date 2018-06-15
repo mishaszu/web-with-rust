@@ -14,10 +14,16 @@ module.exports = {
             inject: 'body',
             template: './web/index.html',
         }),
-        new CopyWebpackPlugin([{
-            from: 'web/images',
-            to: 'images'
-        }])
+        new CopyWebpackPlugin([
+            {
+                from: 'web/images',
+                to: 'images'
+            },
+            {
+                from: 'web/fonts',
+                to: 'fonts'
+            }
+        ])
     ],
     devServer: {
         contentBase: 'build',

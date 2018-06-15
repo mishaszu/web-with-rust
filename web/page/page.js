@@ -44,6 +44,14 @@ export default class Page extends Component {
                     )}
                 </div>
             }
+            if(e.tag === 'aCenter') {
+                return <div key={k} className="center">
+                    <a target="blank" href={e.src}>{e.text}</a>
+                </div>
+            }
+            if(e.tag === 'a') {
+                return <a className="aExtra" key={k} target="blank" href={e.src}>{e.text}</a>
+            }
         });
     }
     render() {
@@ -107,6 +115,10 @@ export default class Page extends Component {
                     .center p {
                         font-size: 1.8em;
                     }
+                    .center a {
+                        font-size: 2.5em;
+                        color: coral;
+                    }
                     .ulExtra {
                         padding-bottom: 10%;
                     }
@@ -115,6 +127,10 @@ export default class Page extends Component {
                     }
                     .liExtra {
                         color: #476b6b;
+                    }
+                    .aExtra {
+                        font-size: 1.5em;
+                        color: gray;
                     }
                 `}</style>
             </div>

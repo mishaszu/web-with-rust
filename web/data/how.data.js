@@ -72,9 +72,14 @@ export default [
             {
                 tag: 'li',
                 text: [
-                    'basic'
+                    'basic',
+                    'older style',
+                    'with rust-bingen',
+                    'with react',
+                    'running js function from wasm',
+                    'read wasm string in javascript'
                 ]
             }
         ]
-    },
+    }
 ];

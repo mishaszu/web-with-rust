@@ -49,8 +49,9 @@ export default [
                 src: '../images/programming-ir.png',
             },
             {
-                tag: 'p',
-                text: ['!1!here should be url']
+                tag: 'a',
+                text: 'Creating and working with webassembly modules',
+                src: 'https://hacks.mozilla.org/2017/02/creating-and-working-with-webassembly-modules/'
             }
         ]
     },
@@ -63,8 +64,9 @@ export default [
                 src: '../images/programming-wasm.png',
             },
             {
-                tag: 'p',
-                text: ['!1!here should be url']
+                tag: 'a',
+                text: 'Creating and working with webassembly modules',
+                src: 'https://hacks.mozilla.org/2017/02/creating-and-working-with-webassembly-modules/'
             }
 
         ]
